@@ -11,7 +11,7 @@ const Followers = ({setShowFollowers, user, followings, currUser}) => {
 
   useEffect(() => {
 
-    fetch(`http://localhost:3000/users/${currUser.id}`, {
+    fetch(`https://instagram-clone-api.herokuapp.com/users/${currUser.id}`, {
         
     method: 'GET',
 
@@ -50,7 +50,7 @@ const Followers = ({setShowFollowers, user, followings, currUser}) => {
 
   const handleFollow = (follower) => {
 
-    fetch(`http://localhost:3000/profile/${follower.id}/follow`, {
+    fetch(`https://instagram-clone-api.herokuapp.com/profile/${follower.id}/follow`, {
         
     
     method: 'POST',
@@ -73,7 +73,7 @@ const Followers = ({setShowFollowers, user, followings, currUser}) => {
     
   const handleUnfollow = (follower) => {
   
-    fetch(`http://localhost:3000/profile/${follower.id}/unfollow`, {
+    fetch(`https://instagram-clone-api.herokuapp.com/profile/${follower.id}/unfollow`, {
         
     
     method: 'POST',

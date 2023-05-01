@@ -13,7 +13,7 @@ const Explore = ({currUser, setShowComment, setPic, setPost, setAnyUser,
     useEffect(() => {
 
 
-      fetch('http://localhost:3000/posts', {
+      fetch('https://instagram-clone-api.herokuapp.com/posts', {
         
       method: 'GET',
 

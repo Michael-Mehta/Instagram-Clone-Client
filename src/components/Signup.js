@@ -17,7 +17,7 @@ const Signup=({currUser, setCurrUser})=>{
     )
 
     const signup = async (userInfo, setCurrUser)=>{
-        const url="http://localhost:3000/signup"
+        const url="https://instagram-clone-api.herokuapp.com/signup"
         try{
             const response=await fetch(url, {
                 method: 'POST',

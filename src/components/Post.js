@@ -44,7 +44,7 @@ const Post = ({ post, currUser, setShowComment, setPic, setPost, profile, setAny
 
 
     const handleProfile = () => {
-        fetch(`http://localhost:3000/users/${post.user_id}`, {
+        fetch(`https://instagram-clone-api.herokuapp.com/users/${post.user_id}`, {
             
           method: 'GET',
     
@@ -85,7 +85,7 @@ const Post = ({ post, currUser, setShowComment, setPic, setPost, profile, setAny
 
 
       const handleProfileCommentAvatar = () => {
-        fetch(`http://localhost:3000/users/${post.user_id}`, {
+        fetch(`https://instagram-clone-api.herokuapp.com/users/${post.user_id}`, {
             
           method: 'GET',
     
@@ -128,7 +128,7 @@ const Post = ({ post, currUser, setShowComment, setPic, setPost, profile, setAny
     const handleLikeClick = () => {
         if (liked) {
             // User has already liked the post - unlike it
-            fetch(`http://localhost:3000/likes/${post.id}`,
+            fetch(`https://instagram-clone-api.herokuapp.com/likes/${post.id}`,
                 { method: 'DELETE',
 
                 headers: { 
@@ -152,7 +152,7 @@ const Post = ({ post, currUser, setShowComment, setPic, setPost, profile, setAny
 
         } else {
             // User hasn't liked the post yet - like it
-            fetch(`http://localhost:3000/posts/${post.id}/likes`,
+            fetch(`https://instagram-clone-api.herokuapp.com/posts/${post.id}/likes`,
                 { method: 'POST',
 
                 headers: { 

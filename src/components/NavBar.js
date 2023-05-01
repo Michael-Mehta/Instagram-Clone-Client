@@ -11,7 +11,7 @@ const NavBar = ({setShowPost, setAnyUser, currUser, setCurrUser, setExplore, set
 
 
   useEffect(() => {
-    fetch(`http://localhost:3000/users/${currUser.id}`, {
+    fetch(`https://instagram-clone-api.herokuapp.com/users/${currUser.id}`, {
         
       method: 'GET',
 
@@ -54,7 +54,7 @@ const NavBar = ({setShowPost, setAnyUser, currUser, setCurrUser, setExplore, set
   }
 
   const handleProfile = () => {
-    fetch(`http://localhost:3000/users/${currUser.id}`, {
+    fetch(`https://instagram-clone-api.herokuapp.com/users/${currUser.id}`, {
         
       method: 'GET',
 

@@ -20,7 +20,7 @@ const ProfilePicUpdate = ({setNewProfilePic, currUser}) => {
         formData.append('avatar', avatar);
     
         try {
-          const response = await fetch(`http://localhost:3000/users/${currUser.id}/avatar`, {
+          const response = await fetch(`https://instagram-clone-api.herokuapp.com/users/${currUser.id}/avatar`, {
             method: 'PUT',
             body: formData,
           });

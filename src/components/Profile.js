@@ -44,7 +44,7 @@ const Profile = ({user, currUser, setAnyUser, setCurrUser, setPost, setShowComme
         })
 
 
-        fetch(`http://localhost:3000/users/${user.id}`, {
+        fetch(`https://instagram-clone-api.herokuapp.com/users/${user.id}`, {
         
       method: 'GET',
 
@@ -82,7 +82,7 @@ const Profile = ({user, currUser, setAnyUser, setCurrUser, setPost, setShowComme
 
     const handleFollow = () => {
 
-        fetch(`http://localhost:3000/profile/${user.id}/follow`, {
+        fetch(`https://instagram-clone-api.herokuapp.com/profile/${user.id}/follow`, {
             
         
         method: 'POST',
@@ -107,7 +107,7 @@ const Profile = ({user, currUser, setAnyUser, setCurrUser, setPost, setShowComme
 
     const handleUnfollow = () => {
 
-        fetch(`http://localhost:3000/profile/${user.id}/unfollow`, {
+        fetch(`https://instagram-clone-api.herokuapp.com/profile/${user.id}/unfollow`, {
             
         
         method: 'POST',
@@ -133,7 +133,7 @@ const Profile = ({user, currUser, setAnyUser, setCurrUser, setPost, setShowComme
     const getPosts = () => {
 
     
-      fetch(`http://localhost:3000/users/${user.id}/posts`, {
+      fetch(`https://instagram-clone-api.herokuapp.com/users/${user.id}/posts`, {
         
       method: 'GET',
 

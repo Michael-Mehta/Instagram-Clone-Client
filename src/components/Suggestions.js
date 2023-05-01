@@ -42,7 +42,7 @@ const Suggestions = ({currUser}) => {
   const getUsers = () => {
 
     
-    fetch('http://localhost:3000/users/suggested_users', {
+    fetch('https://instagram-clone-api.herokuapp.com/users/suggested_users', {
       
     method: 'GET',
 
@@ -82,7 +82,7 @@ useEffect(() => {
 
 const handleFollow = (user) => {
 
-  fetch(`http://localhost:3000/profile/${user.id}/follow`, {
+  fetch(`https://instagram-clone-api.herokuapp.com/profile/${user.id}/follow`, {
       
   
   method: 'POST',
@@ -105,7 +105,7 @@ const handleFollow = (user) => {
   
 const handleUnfollow = (user) => {
 
-  fetch(`http://localhost:3000/profile/${user.id}/unfollow`, {
+  fetch(`https://instagram-clone-api.herokuapp.com/profile/${user.id}/unfollow`, {
       
   
   method: 'POST',

@@ -27,7 +27,7 @@ setShowPost, showComment, setShowComment, setExplore, explore, profile, setProfi
 
    
 
-    fetch(`http://localhost:3000/users/${currUser.id}`, {
+    fetch(`https://instagram-clone-api.herokuapp.com/users/${currUser.id}`, {
          
        method: 'GET',
  

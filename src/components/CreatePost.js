@@ -35,7 +35,7 @@ const CreatePost = ({setShowPost, currUser}) => {
    const postData = (formData) => {
 
 
-    fetch('http://localhost:3000/posts', {
+    fetch('https://instagram-clone-api.herokuapp.com/posts', {
       method: "POST",
       body: formData,
       headers: {
