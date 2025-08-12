@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { AiOutlinePicture } from "react-icons/ai";
-import { BiArrowBack } from "react-icons/bi";
+
 import { BsXLg } from 'react-icons/bs';
 
 

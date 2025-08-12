@@ -1,4 +1,4 @@
-import React from 'react'
+
 import Logout from './Logout'
 
 const More = ({currUser, setCurrUser}) => {

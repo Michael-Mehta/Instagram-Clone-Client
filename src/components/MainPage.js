@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import NavBar from './NavBar'
 import Home from './Home'
 import Suggestions from './Suggestions'
@@ -6,7 +6,7 @@ import CreatePost from './CreatePost'
 import Comment from './Comment'
 import Explore from './Explore'
 import Profile from './Profile'
-import Followers from './Followers'
+
 import UpdateUser from './UpdateUser'
 import ProfilePicUpdate from './ProfilePicUpdate'
 

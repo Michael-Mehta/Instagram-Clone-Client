@@ -2,7 +2,7 @@
 
 
 
-const ExplorePosts = ({post, currUser, setShowComment, setPic, setPost, profile, setAnyUser}) => {
+const ExplorePosts = ({post, setShowComment, setPic, setPost}) => {
 
 
 

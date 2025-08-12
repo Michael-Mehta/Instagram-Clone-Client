@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect} from 'react'
 import { BsFillHouseDoorFill, BsSearch, BsCompass,
   BsChatText, BsHeart, BsPlusSquare} from 'react-icons/bs';
  import { BiMoviePlay } from "react-icons/bi";
- import { GiDove, GiHamburgerMenu } from "react-icons/gi";
+ import {  GiHamburgerMenu } from "react-icons/gi";
  import { useNavigate } from "react-router-dom";
 
 const NavBar = ({setShowPost, setAnyUser, currUser, setCurrUser, setExplore, setProfile, setUpdate}) => {

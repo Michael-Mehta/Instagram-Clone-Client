@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import { useParams } from "react-router-dom";
-import UpdateUser from "./UpdateUser";
+import { useEffect, useState } from 'react'
+
 import NavBar from './NavBar';
 import Post from './Post';
 
