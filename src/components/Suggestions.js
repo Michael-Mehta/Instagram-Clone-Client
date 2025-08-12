@@ -40,6 +40,11 @@ const Suggestions = ({currUser}) => {
 
 
   const getUsers = () => {
+    const token = localStorage.getItem('authToken')
+    if (!currUser?.id || !token) {
+      console.warn('Skipping user fetch in NavBar: missing currUser.id or authToken')
+      return
+    }
 
     
     fetch('https://instagramclonebackend-ffg2c4gsd3fwg4gd.westus3-01.azurewebsites.net/users/suggested_users', {
@@ -50,7 +55,7 @@ const Suggestions = ({currUser}) => {
 
       
 
-      'Authorization': `Bearer ${localStorage.getItem('authToken')}`
+      'Authorization': `Bearer ${token}`
     }
 
     })
@@ -82,6 +87,12 @@ useEffect(() => {
 
 const handleFollow = (user) => {
 
+  const token = localStorage.getItem('authToken')
+    if (!currUser?.id || !token) {
+      console.warn('Skipping user fetch in NavBar: missing currUser.id or authToken')
+      return
+    }
+
   fetch(`https://instagramclonebackend-ffg2c4gsd3fwg4gd.westus3-01.azurewebsites.net/profile/${user.id}/follow`, {
       
   
@@ -89,7 +100,7 @@ const handleFollow = (user) => {
 
   headers: {
 
-      'Authorization': `Bearer ${localStorage.getItem('authToken')}`
+      'Authorization': `Bearer ${token}`
 
   }
 
@@ -105,6 +116,12 @@ const handleFollow = (user) => {
   
 const handleUnfollow = (user) => {
 
+  const token = localStorage.getItem('authToken')
+    if (!currUser?.id || !token) {
+      console.warn('Skipping user fetch in NavBar: missing currUser.id or authToken')
+      return
+    }
+
   fetch(`https://instagramclonebackend-ffg2c4gsd3fwg4gd.westus3-01.azurewebsites.net/profile/${user.id}/unfollow`, {
       
   
@@ -112,7 +129,7 @@ const handleUnfollow = (user) => {
 
   headers: {
 
-      'Authorization': `Bearer ${localStorage.getItem('authToken')}`
+      'Authorization': `Bearer ${token}`
 
   }
 

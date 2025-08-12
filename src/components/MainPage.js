@@ -20,10 +20,11 @@ setShowPost, showComment, setShowComment, setExplore, explore, profile, setProfi
 
 
   useEffect(() => {
-    if (!currUser || !currUser.id) {
-    console.warn('currUser or currUser.id is missing; skipping user fetch')
-    return
-  }
+    const token = localStorage.getItem('authToken')
+    if (!currUser?.id || !token) {
+      console.warn('Skipping user fetch in NavBar: missing currUser.id or authToken')
+      return
+    }
 
   
   
@@ -38,7 +39,7 @@ setShowPost, showComment, setShowComment, setExplore, explore, profile, setProfi
  
          
  
-         'Authorization': `Bearer ${localStorage.getItem('authToken')}`
+         'Authorization': `Bearer ${token}`
        }
  
        })

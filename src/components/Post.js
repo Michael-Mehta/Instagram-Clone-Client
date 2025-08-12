@@ -44,6 +44,11 @@ const Post = ({ post, currUser, setShowComment, setPic, setPost, profile, setAny
 
 
     const handleProfile = () => {
+        const token = localStorage.getItem('authToken')
+    if (!currUser?.id || !token) {
+      console.warn('Skipping user fetch in NavBar: missing currUser.id or authToken')
+      return
+    }
         fetch(`https://instagramclonebackend-ffg2c4gsd3fwg4gd.westus3-01.azurewebsites.net/users/${post.user_id}`, {
             
           method: 'GET',
@@ -52,7 +57,7 @@ const Post = ({ post, currUser, setShowComment, setPic, setPost, profile, setAny
     
             
     
-            'Authorization': `Bearer ${localStorage.getItem('authToken')}`
+            'Authorization': `Bearer ${token}`
           }
     
           })
@@ -85,6 +90,11 @@ const Post = ({ post, currUser, setShowComment, setPic, setPost, profile, setAny
 
 
       const handleProfileCommentAvatar = () => {
+        const token = localStorage.getItem('authToken')
+    if (!currUser?.id || !token) {
+      console.warn('Skipping user fetch in NavBar: missing currUser.id or authToken')
+      return
+    }
         fetch(`https://instagramclonebackend-ffg2c4gsd3fwg4gd.westus3-01.azurewebsites.net/users/${post.user_id}`, {
             
           method: 'GET',
@@ -93,7 +103,7 @@ const Post = ({ post, currUser, setShowComment, setPic, setPost, profile, setAny
     
             
     
-            'Authorization': `Bearer ${localStorage.getItem('authToken')}`
+            'Authorization': `Bearer ${token}`
           }
     
           })
@@ -128,6 +138,7 @@ const Post = ({ post, currUser, setShowComment, setPic, setPost, profile, setAny
     const handleLikeClick = () => {
         if (liked) {
             // User has already liked the post - unlike it
+            
             fetch(`https://instagramclonebackend-ffg2c4gsd3fwg4gd.westus3-01.azurewebsites.net/likes/${post.id}`,
                 { method: 'DELETE',
 
