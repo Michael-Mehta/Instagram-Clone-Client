@@ -11,6 +11,11 @@ const NavBar = ({setShowPost, setAnyUser, currUser, setCurrUser, setExplore, set
 
 
   useEffect(() => {
+    const token = localStorage.getItem('authToken')
+    if (!currUser?.id || !token) {
+      console.warn('Skipping user fetch in NavBar: missing currUser.id or authToken')
+      return
+    }
     fetch(`https://instagramclonebackend-ffg2c4gsd3fwg4gd.westus3-01.azurewebsites.net/users/${currUser.id}`, {
         
       method: 'GET',
@@ -19,7 +24,7 @@ const NavBar = ({setShowPost, setAnyUser, currUser, setCurrUser, setExplore, set
 
         
 
-        'Authorization': `Bearer ${localStorage.getItem('authToken')}`
+        'Authorization': `Bearer ${token}`
       }
 
       })
@@ -54,6 +59,12 @@ const NavBar = ({setShowPost, setAnyUser, currUser, setCurrUser, setExplore, set
   }
 
   const handleProfile = () => {
+    const token = localStorage.getItem('authToken')
+    if (!currUser?.id || !token) {
+      console.warn('Skipping user fetch in NavBar: missing currUser.id or authToken')
+      return
+    }
+
     fetch(`https://instagramclonebackend-ffg2c4gsd3fwg4gd.westus3-01.azurewebsites.net/users/${currUser.id}`, {
         
       method: 'GET',
@@ -62,7 +73,7 @@ const NavBar = ({setShowPost, setAnyUser, currUser, setCurrUser, setExplore, set
 
         
 
-        'Authorization': `Bearer ${localStorage.getItem('authToken')}`
+        'Authorization': `Bearer ${token}`
       }
 
       })

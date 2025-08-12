@@ -20,7 +20,10 @@ setShowPost, showComment, setShowComment, setExplore, explore, profile, setProfi
 
 
   useEffect(() => {
-
+    if (!currUser || !currUser.id) {
+    console.warn('currUser or currUser.id is missing; skipping user fetch')
+    return
+  }
 
   
   
@@ -60,7 +63,7 @@ setShowPost, showComment, setShowComment, setExplore, explore, profile, setProfi
        
          
  
-     },[]);
+     },[currUser?.id]);
  
 
   
