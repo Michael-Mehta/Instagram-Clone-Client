@@ -1,6 +1,6 @@
 import Signup from "./Signup";
 import Login from './Login'
-import MainPage from "./MainPage";
+
 
 import { useState } from "react";
 const User = ({currUser, setCurrUser}) => {
