@@ -5,7 +5,7 @@
 const Logout =({setCurrUser})=>{
     const logout=async (setCurrUser)=>{
         try {
-            const response=await fetch("https://instagram-clone-api.herokuapp.com/logout",{
+            const response=await fetch("https://instagramclonebackend-ffg2c4gsd3fwg4gd.westus3-01.azurewebsites.net/logout",{
                 method: "delete",
                 headers: {
                     "content-type": "application/json",

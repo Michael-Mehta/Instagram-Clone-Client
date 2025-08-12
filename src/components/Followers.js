@@ -11,7 +11,7 @@ const Followers = ({setShowFollowers, user, followings, currUser}) => {
 
   useEffect(() => {
 
-    fetch(`https://instagram-clone-api.herokuapp.com/users/${currUser.id}`, {
+    fetch(`https://instagramclonebackend-ffg2c4gsd3fwg4gd.westus3-01.azurewebsites.net/users/${currUser.id}`, {
         
     method: 'GET',
 
@@ -50,7 +50,7 @@ const Followers = ({setShowFollowers, user, followings, currUser}) => {
 
   const handleFollow = (follower) => {
 
-    fetch(`https://instagram-clone-api.herokuapp.com/profile/${follower.id}/follow`, {
+    fetch(`https://instagramclonebackend-ffg2c4gsd3fwg4gd.westus3-01.azurewebsites.net/profile/${follower.id}/follow`, {
         
     
     method: 'POST',
@@ -73,7 +73,7 @@ const Followers = ({setShowFollowers, user, followings, currUser}) => {
     
   const handleUnfollow = (follower) => {
   
-    fetch(`https://instagram-clone-api.herokuapp.com/profile/${follower.id}/unfollow`, {
+    fetch(`https://instagramclonebackend-ffg2c4gsd3fwg4gd.westus3-01.azurewebsites.net/profile/${follower.id}/unfollow`, {
         
     
     method: 'POST',

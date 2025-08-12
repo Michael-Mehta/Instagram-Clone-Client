@@ -19,7 +19,7 @@ const Comment = ({setShowComment, pic, post, currUser, setAnyUser,
         setPost(post)
 
 
-        fetch(`https://instagram-clone-api.herokuapp.com/posts/${post.id}`, {
+        fetch(`https://instagramclonebackend-ffg2c4gsd3fwg4gd.westus3-01.azurewebsites.net/posts/${post.id}`, {
             
         method: 'GET',
   
@@ -50,7 +50,7 @@ const Comment = ({setShowComment, pic, post, currUser, setAnyUser,
 
 
         useEffect(() => {
-          fetch(`https://instagram-clone-api.herokuapp.com/posts/${post.id}/comments`)
+          fetch(`https://instagramclonebackend-ffg2c4gsd3fwg4gd.westus3-01.azurewebsites.net/posts/${post.id}/comments`)
             .then(response => response.json())
             .then(data =>  {setComments(data)
             console.log(data) })
@@ -80,7 +80,7 @@ const Comment = ({setShowComment, pic, post, currUser, setAnyUser,
 
 
     const handleSubmit = () => {
-        fetch(`https://instagram-clone-api.herokuapp.com/posts/${post.id}/comments`, {
+        fetch(`https://instagramclonebackend-ffg2c4gsd3fwg4gd.westus3-01.azurewebsites.net/posts/${post.id}/comments`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
@@ -118,7 +118,7 @@ const Comment = ({setShowComment, pic, post, currUser, setAnyUser,
 
 
     const handleProfile = () => {
-      fetch(`https://instagram-clone-api.herokuapp.com/users/${post.user_id}`, {
+      fetch(`https://instagramclonebackend-ffg2c4gsd3fwg4gd.westus3-01.azurewebsites.net/users/${post.user_id}`, {
           
         method: 'GET',
   

@@ -36,7 +36,7 @@ const Login = ({setCurrUser, setToken}) =>{
 
     
     const login = async (userInfo, setCurrUser)=>{
-      const url="https://instagram-clone-api.herokuapp.com/login"
+      const url="https://instagramclonebackend-ffg2c4gsd3fwg4gd.westus3-01.azurewebsites.net/login"
       try{
           const response=await fetch(url, {
               method: "POST",

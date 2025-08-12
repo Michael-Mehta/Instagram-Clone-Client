@@ -15,7 +15,7 @@ const Home = ({token, currUser, setShowComment, setPic, setPost, setAnyUser, set
     const getPosts = () => {
 
     
-      fetch('https://instagram-clone-api.herokuapp.com/posts', {
+      fetch('https://instagramclonebackend-ffg2c4gsd3fwg4gd.westus3-01.azurewebsites.net/posts', {
         
       method: 'GET',
 

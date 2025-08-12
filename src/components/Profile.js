@@ -43,7 +43,7 @@ const Profile = ({user, currUser, setAnyUser, setCurrUser, setPost, setShowComme
         })
 
 
-        fetch(`https://instagram-clone-api.herokuapp.com/users/${user.id}`, {
+        fetch(`https://instagramclonebackend-ffg2c4gsd3fwg4gd.westus3-01.azurewebsites.net/users/${user.id}`, {
         
       method: 'GET',
 
@@ -81,7 +81,7 @@ const Profile = ({user, currUser, setAnyUser, setCurrUser, setPost, setShowComme
 
     const handleFollow = () => {
 
-        fetch(`https://instagram-clone-api.herokuapp.com/profile/${user.id}/follow`, {
+        fetch(`https://instagramclonebackend-ffg2c4gsd3fwg4gd.westus3-01.azurewebsites.net/profile/${user.id}/follow`, {
             
         
         method: 'POST',
@@ -106,7 +106,7 @@ const Profile = ({user, currUser, setAnyUser, setCurrUser, setPost, setShowComme
 
     const handleUnfollow = () => {
 
-        fetch(`https://instagram-clone-api.herokuapp.com/profile/${user.id}/unfollow`, {
+        fetch(`https://instagramclonebackend-ffg2c4gsd3fwg4gd.westus3-01.azurewebsites.net/profile/${user.id}/unfollow`, {
             
         
         method: 'POST',
@@ -132,7 +132,7 @@ const Profile = ({user, currUser, setAnyUser, setCurrUser, setPost, setShowComme
     const getPosts = () => {
 
     
-      fetch(`https://instagram-clone-api.herokuapp.com/users/${user.id}/posts`, {
+      fetch(`https://instagramclonebackend-ffg2c4gsd3fwg4gd.westus3-01.azurewebsites.net/users/${user.id}/posts`, {
         
       method: 'GET',
 
