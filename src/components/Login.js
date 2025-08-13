@@ -35,46 +35,44 @@ const Login = ({setCurrUser, setToken}) =>{
 
 
     
-    const login = async (userInfo, setCurrUser)=>{
-      const url="https://instagramclonebackend-ffg2c4gsd3fwg4gd.westus3-01.azurewebsites.net/login"
-      try{
-          const response=await fetch(url, {
-              method: "POST",
-              headers: {
-                  'content-type': 'application/json',
-                  'accept': 'application/json'
-              },
-              body: JSON.stringify(userInfo)
-          })
-          const data=await response.json()
-          
-          if(!response.ok) 
-            throw data.error
-          localStorage.setItem("token", response.headers.get("Authorization"))
-          setCurrUser(data.user)
-          
-          localStorage.setItem('authToken', data.token);
-          
-          
-          
-           navigate('/')
-          
-         
-      }catch(error){
-         console.log("error", error)
-         setLoginError(error)
-      }
-  }
-    const handleSubmit = (e) => {
-      e.preventDefault()
-       
-        const userInfo={
-          "user":{ username: username, email: email, password: password }
-        }
-        login(userInfo, setCurrUser)
-        navigate("/")
-  
+    const login = async (userInfo) => {
+  const url = "https://instagramclonebackend-ffg2c4gsd3fwg4gd.westus3-01.azurewebsites.net/login";
+  try {
+    const response = await fetch(url, {
+      method: "POST",
+      headers: {
+        'content-type': 'application/json',
+        'accept': 'application/json'
+      },
+      body: JSON.stringify(userInfo)
+    });
+
+    const data = await response.json();
+
+    if (!response.ok) throw new Error(data.error || 'Login failed');
+
+    const token = data.token || response.headers.get("Authorization");
+
+    if (token) {
+      localStorage.setItem('authToken', token);
+      setToken(token);
     }
+
+    setCurrUser(data.user);
+    navigate('/');
+
+  } catch (error) {
+    console.error("Login error:", error);
+    setLoginError(error.message);
+  }
+};
+
+const handleSubmit = (e) => {
+  e.preventDefault();
+  const userInfo = { user: { username, email, password } };
+  login(userInfo);
+};
+
     
 
     const handleClick = e => {
