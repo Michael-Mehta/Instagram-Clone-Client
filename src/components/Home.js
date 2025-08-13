@@ -14,6 +14,11 @@ const Home = ({token, currUser, setShowComment, setPic, setPost, setAnyUser, set
 
     const getPosts = () => {
 
+      const token = localStorage.getItem('authToken')
+    if (!currUser?.id || !token) {
+      console.warn('Skipping user fetch in NavBar: missing currUser.id or authToken')
+      return
+    }
     
       fetch('https://instagramclonebackend-ffg2c4gsd3fwg4gd.westus3-01.azurewebsites.net/posts', {
         
@@ -23,7 +28,7 @@ const Home = ({token, currUser, setShowComment, setPic, setPost, setAnyUser, set
 
         
 
-        'Authorization': `Bearer ${localStorage.getItem('authToken')}`
+        'Authorization': `Bearer ${token}`
       }
 
       })
