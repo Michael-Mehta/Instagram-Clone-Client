@@ -207,7 +207,7 @@ const DeleteButton = ({ postId, onDelete }) => {
       try {
         const token = localStorage.getItem('authToken'); // or wherever you store your JWT
         
-        const response = await fetch(`/posts/${postId}`, {
+        const response = await fetch(`https://instagramclonebackend-ffg2c4gsd3fwg4gd.westus3-01.azurewebsites.net/posts/${postId}`, {
           method: 'DELETE',
           headers: {
             'Authorization': `Bearer ${token}`,
