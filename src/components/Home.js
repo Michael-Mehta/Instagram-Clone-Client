@@ -11,6 +11,9 @@ const Home = ({token, currUser, setShowComment, setPic, setPost, setAnyUser, set
 
     const [posts, setPosts] = useState([])
 
+    const handlePostDelete = (deletedPostId) => {
+    setPost(posts.filter(post => post.id !== deletedPostId));
+   };
 
     const getPosts = () => {
 
@@ -88,6 +91,7 @@ const Home = ({token, currUser, setShowComment, setPic, setPost, setAnyUser, set
              profile = {myprofile}
              setAnyUser = {setAnyUser}
              setProfile = {setProfile}
+             onPostDelete={handlePostDelete}
              />
         ))
 

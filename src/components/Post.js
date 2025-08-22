@@ -201,6 +201,39 @@ const Post = ({ post, currUser, setShowComment, setPic, setPost, profile, setAny
         setPost(post)
     }
 
+const DeleteButton = ({ postId, onDelete }) => {
+    const handleDelete = async () => {
+    if (window.confirm('Are you sure you want to delete this post?')) {
+      try {
+        const token = localStorage.getItem('authToken'); // or wherever you store your JWT
+        
+        const response = await fetch(`/posts/${postId}`, {
+          method: 'DELETE',
+          headers: {
+            'Authorization': `Bearer ${token}`,
+            'Content-Type': 'application/json'
+          }
+        });
+        
+        if (response.ok) {
+          onDelete(postId); // Remove from UI
+        } else {
+          alert('Failed to delete post');
+        }
+      } catch (error) {
+        console.error('Error:', error);
+        alert('Error deleting post');
+      }
+    }
+  };
+
+  return (
+    <button onClick={handleDelete} className="delete-btn">
+      Delete
+    </button>
+  );
+};
+
 
     const handleProfileComment = () => {
         handleProfileCommentAvatar()
@@ -228,7 +261,14 @@ const Post = ({ post, currUser, setShowComment, setPic, setPost, profile, setAny
                     onMouseDown={() => handleLikeClick()} /></div>
                     <div onClick={() => handleComment()}>< BsChat /></div>
                 </div>
-                <div className='likes'>Likes:{likes}</div>
+                <div className='likes'>Likes:{likes}  
+                    {post.user_id === currUser.id && (
+                    <DeleteButton 
+                     postId={post.id} 
+                     onDelete={onPostDelete}
+                    />
+                     )}</div>
+
                 <div className='postDescription'>
                     <p>Description: {post.description}</p>
                 </div>
