@@ -41,6 +41,7 @@ const Suggestions = ({currUser}) => {
 
   const getUsers = () => {
     const token = localStorage.getItem('authToken')
+
     if (!currUser?.id || !token) {
       console.warn('Skipping user fetch in NavBar: missing currUser.id or authToken')
       return
@@ -78,6 +79,12 @@ const Suggestions = ({currUser}) => {
 
 
 useEffect(() => {
+  const token = localStorage.getItem('authToken')
+    
+    if (!currUser?.id || !token) {
+      console.warn('Skipping user fetch in NavBar: missing currUser.id or authToken')
+      return
+    }
 
   getUsers()
 

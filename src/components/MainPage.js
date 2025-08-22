@@ -25,6 +25,11 @@ setShowPost, showComment, setShowComment, setExplore, explore, profile, setProfi
       console.warn('Skipping user fetch in NavBar: missing currUser.id or authToken')
       return
     }
+    
+    if (!currUser?.id || !token) {
+      console.warn('Skipping user fetch in NavBar: missing currUser.id or authToken')
+      return
+    }
 
   
   
