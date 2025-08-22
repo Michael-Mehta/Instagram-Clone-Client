@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { BsHeart, BsChat } from 'react-icons/bs';
 
 
-const Post = ({ post, currUser, setShowComment, setPic, setPost, profile, setAnyUser, setProfile}) => {
+const Post = ({ post, currUser, setShowComment, setPic, setPost, profile, setAnyUser, setProfile, onPostDelete}) => {
 
 
     const [liked, setLiked] = useState(post.liked_by_current_user);
