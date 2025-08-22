@@ -261,7 +261,7 @@ const DeleteButton = ({ postId, onDelete }) => {
                     onMouseDown={() => handleLikeClick()} /></div>
                     <div onClick={() => handleComment()}>< BsChat /></div>
                 </div>
-                <div className='likes'>Likes:{likes}  
+                <div className='likesanddelete'>Likes:{likes}  
                     {post.user_id === currUser.id && (
                     <DeleteButton 
                      postId={post.id} 
