@@ -378,9 +378,9 @@
   color: rgb(141, 141, 141);
 }
 
-.likesanddelete {
-   display:flex;
-   justify-content: space-between;
+.likes {
+   align-self: flex-start;
+   
 }
 
 .picComments {

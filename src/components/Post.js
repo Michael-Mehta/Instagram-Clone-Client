@@ -260,14 +260,14 @@ const DeleteButton = ({ postId, onDelete }) => {
                     <div>< BsHeart className={red ? 'unheart':'heart'} 
                     onMouseDown={() => handleLikeClick()} /></div>
                     <div onClick={() => handleComment()}>< BsChat /></div>
-                </div>
-                <div className='likesanddelete'>Likes:{likes}  
                     {post.user_id === currUser.id && (
                     <DeleteButton 
                      postId={post.id} 
                      onDelete={onPostDelete}
                     />
-                     )}</div>
+                     )}
+                </div>
+                <div className='likes'>Likes:{likes}</div>
 
                 <div className='postDescription'>
                     <p>Description: {post.description}</p>
