@@ -253,20 +253,19 @@ const DeleteButton = ({ postId, onDelete }) => {
            (<img src={post.image} alt='pic' className='profilePost' onClick={() => handleProfileComment()}/>):(<div className='post'>
             <div className='postTop' onClick={() => handleProfile()}><div><img src = {post.user_avatar_url} className = 'postAvatar'/></div>
             <div className='postUsername'>{post.username}</div></div>
-            <div className='picIcon'><div className='imagePic'><img src={post.image_url} alt='pic' className='imagePics'  /></div>
-                <div className='heart-comment'>
-
-          
-                    <div>< BsHeart className={red ? 'unheart':'heart'} 
-                    onMouseDown={() => handleLikeClick()} /></div>
-                    <div onClick={() => handleComment()}>< BsChat /></div>
-                    {post.user_id === currUser.id && (
+            {post.user_id === currUser.id && (
                     <DeleteButton 
                      postId={post.id} 
                      onDelete={onPostDelete}
                     />
                      )}
+            <div className='picIcon'><div className='imagePic'><img src={post.image_url} alt='pic' className='imagePics'  /></div>
+                <div className='heart-comment'>
+                    <div>< BsHeart className={red ? 'unheart':'heart'} 
+                    onMouseDown={() => handleLikeClick()} /></div>
+                    <div onClick={() => handleComment()}>< BsChat /></div>
                 </div>
+                
                 <div className='likes'>Likes:{likes}</div>
 
                 <div className='postDescription'>
